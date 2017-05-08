@@ -21,12 +21,15 @@
  */
 var Admin = function () {
     this.register = {};
+    /*对象*/
     // 工具栏下的工具
     this.tools = ['#page-list', '#file-list', '#link-list', '#preference',
         '#user-list', '#plugin-list', '#others', '#category-list'];
+    /*数组*/
     // 多用户时，一般用户不能使用的功能
     this.adTools = ['link-list', 'preference', 'file-list', 'page-list',
         'user-list', 'plugin-list', 'others', 'category-list'];
+    /*数组*/
 };
 
 $.extend(Admin.prototype, {
@@ -49,7 +52,7 @@ $.extend(Admin.prototype, {
      */
     setHashByPage: function (currentPage) {
         var hash = window.location.hash,
-                hashList = hash.split("/");
+            hashList = hash.split("/");
         if (/^\d*$/.test(hashList[hashList.length - 1])) {
             hashList[hashList.length - 1] = currentPage;
         } else {
@@ -73,7 +76,7 @@ $.extend(Admin.prototype, {
         var tagList = tag.split("/");
         var tags = {};
         tags.page = 1,
-                tags.hashList = [];
+            tags.hashList = [];
         for (var i = 0; i < tagList.length; i++) {
             if (i === tagList.length - 1 && (/^\d+$/.test(tagList[i]))) {
                 tags.page = tagList[i];
@@ -91,7 +94,7 @@ $.extend(Admin.prototype, {
         $("#tipMsg").text("");
         var tags = admin.analyseHash();
         var tab = tags.hashList[1],
-                subTab = tags.hashList[2];
+            subTab = tags.hashList[2];
 
         if (tags.hashList.length === 1) {
             tab = tags.hashList[0];
@@ -113,8 +116,8 @@ $.extend(Admin.prototype, {
         try {
             // 除更新、发布、取消发布文章，编辑器中无内容外，离开编辑器需进行提示。
             if (tab !== "article" && admin.article.isConfirm &&
-                    admin.editors.articleEditor.getContent().replace(/\s/g, '') !== ""
-                    && admin.article.content !== admin.editors.articleEditor.getContent()) {
+                admin.editors.articleEditor.getContent().replace(/\s/g, '') !== ""
+                && admin.article.content !== admin.editors.articleEditor.getContent()) {
                 if (!confirm(Label.editorLeaveLabel)) {
                     window.location.hash = "#article/article";
                     return;
@@ -122,16 +125,16 @@ $.extend(Admin.prototype, {
             }
             // 不离开编辑器，hash 需变为 "#article/article"，此时不需要做任何处理。
             if (tab === "article" && admin.article.isConfirm &&
-                    admin.editors.articleEditor.getContent().replace(/\s/g, '') !== ""
-                    && admin.article.content !== admin.editors.articleEditor.getContent()) {
+                admin.editors.articleEditor.getContent().replace(/\s/g, '') !== ""
+                && admin.article.content !== admin.editors.articleEditor.getContent()) {
                 return;
             }
         } catch (e) {
             var $articleContent = $('#articleContent');
             if ($articleContent.length > 0) {
                 if (tab !== "article" && admin.article.isConfirm &&
-                        $articleContent.val().replace(/\s/g, '') !== ""
-                        && admin.article.content !== $articleContent.val()) {
+                    $articleContent.val().replace(/\s/g, '') !== ""
+                    && admin.article.content !== $articleContent.val()) {
                     if (!confirm(Label.editorLeaveLabel)) {
                         window.location.hash = "#article/article";
                         return;
@@ -139,8 +142,8 @@ $.extend(Admin.prototype, {
                 }
                 // 不离开编辑器，hash 需变为 "#article/article"，此时不需要做任何处理。
                 if (tab === "article" && admin.article.isConfirm &&
-                        $articleContent.val().replace(/\s/g, '') !== ""
-                        && admin.article.content !== $articleContent.val()) {
+                    $articleContent.val().replace(/\s/g, '') !== ""
+                    && admin.article.content !== $articleContent.val()) {
                     return;
                 }
             }
@@ -169,8 +172,7 @@ $.extend(Admin.prototype, {
 
                     // 页面包含子 tab，需根据 hash 定位到相应的 tab
                     if (subTab) {
-                        $("#tab" + tab.substring(0, 1).toUpperCase() + tab.substring(1)).
-                                tabs("setCurrent", subTab);
+                        $("#tab" + tab.substring(0, 1).toUpperCase() + tab.substring(1)).tabs("setCurrent", subTab);
                     }
 
                     // 根据 hash 调用现有的插件函数
@@ -188,8 +190,7 @@ $.extend(Admin.prototype, {
 
                 // 页面包含子 tab，需根据 hash 定位到相应的 tab
                 if (subTab) {
-                    $("#tab" + tab.substring(0, 1).toUpperCase() + tab.substring(1)).
-                            tabs("setCurrent", subTab);
+                    $("#tab" + tab.substring(0, 1).toUpperCase() + tab.substring(1)).tabs("setCurrent", subTab);
                 }
 
                 // 根据 hash 调用现有的插件函数
