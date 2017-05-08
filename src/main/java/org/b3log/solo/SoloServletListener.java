@@ -116,7 +116,7 @@ public final class SoloServletListener extends AbstractServletListener {
         super.contextInitialized(servletContextEvent);
         Stopwatchs.start("Context Initialized");
 
-        beanManager = Lifecycle.getBeanManager();
+        beanManager = Lifecycle.getBeanManager();//beanManager
 
         // Upgrade check (https://github.com/b3log/solo/issues/12040)
         final UpgradeService upgradeService = beanManager.getReference(UpgradeService.class);
