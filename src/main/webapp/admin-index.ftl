@@ -28,30 +28,30 @@
                     <li>
                         <div id="tabs_main">
                             <a href="#main">
-                                <span class="icon-refresh"></span> ${adminIndexLabel}
+                                <span class="icon-refresh"></span> ${adminIndexLabel}<#--后台首页-->
                             </a>
                         </div>
                     </li>
                     <li>
                         <div id="tabArticleTitle" class="tab-current" onclick="admin.collapseNav(this)">
                             <span class="icon-article"></span>
-                            ${articleLabel}
+                            ${articleLabel}<#--文章-->
                             <span class="icon-chevron-up right"></span>
                         </div>
                         <ul id="tabArticleMgt">
                             <li>
                                 <div id="tabs_article">
-                                    <a href="#article/article" onclick="admin.article.prePost()">${postArticleLabel}</a>
+                                    <a href="#article/article" onclick="admin.article.prePost()">${postArticleLabel}</a><#--发布文章-->
                                 </div>
                             </li>
                             <li>
                                 <div id="tabs_article-list">
-                                    <a href="#article/article-list">${articleListLabel}</a>
+                                    <a href="#article/article-list">${articleListLabel}</a><#--文章管理-->
                                 </div>
                             </li>
                             <li>
                                 <div id="tabs_draft-list">
-                                    <a href="#article/draft-list">${draftListLabel}</a>
+                                    <a href="#article/draft-list">${draftListLabel}</a><#--草稿夹-->
                                 </div>
                             </li>
                         </ul>
@@ -59,50 +59,50 @@
                     <li>
                         <div id="tabs_comment-list">
                             <a href="#comment-list">
-                                <span class="icon-cmts"></span> ${commentListLabel}
+                                <span class="icon-cmts"></span> ${commentListLabel}<#--评论管理-->
                             </a>
                         </div>
                     </li>
                     <li>
                         <div id="tabToolsTitle" onclick="admin.collapseNav(this)">
                             <span class="icon-setting"></span>
-                            ${ToolLabel}
+                            ${ToolLabel}<#--工具-->
                             <span class="icon-chevron-down right"></span>
                         </div>
                         <ul class="none" id="tabTools">
                             <li>
                                 <div id="tabs_preference">
-                                    <a href="#tools/preference">${preferenceLabel}</a>
+                                    <a href="#tools/preference">${preferenceLabel}</a><#--偏好设定-->
                                 </div>
                             </li>
                             <li>
                                 <div id="tabs_category-list">
-                                    <a href="#tools/category-list">${categoryListLabel}</a>
+                                    <a href="#tools/category-list">${categoryListLabel}</a><#--分类管理-->
                                 </div>
                             </li>
                             <li>
                                 <div id="tabs_page-list">
-                                    <a href="#tools/page-list">${navMgmtLabel}</a>
+                                    <a href="#tools/page-list">${navMgmtLabel}</a><#--导航管理-->
                                 </div>
                             </li>
                             <li>
                                 <div id="tabs_link-list">
-                                    <a href="#tools/link-list">${linkManagementLabel}</a>
+                                    <a href="#tools/link-list">${linkManagementLabel}</a><#--链接管理-->
                                 </div>
                             </li>
                             <li>
                                 <div id="tabs_user-list">
-                                    <a href="#tools/user-list">${userManageLabel}</a>
+                                    <a href="#tools/user-list">${userManageLabel}</a><#--用户管理-->
                                 </div>
                             </li>
                             <li>
                                 <div id="tabs_plugin-list">
-                                    <a href="#tools/plugin-list">${pluginMgmtLabel}</a>
+                                    <a href="#tools/plugin-list">${pluginMgmtLabel}</a><#--插件管理-->
                                 </div>
                             </li>
                             <li>
                                 <div id="tabs_others">
-                                    <a href="#tools/others">${othersLabel}</a>
+                                    <a href="#tools/others">${othersLabel}</a><#--其他-->
                                 </div>
                             </li>  
                         </ul>
@@ -110,7 +110,7 @@
                     <li>
                         <div id="tabs_about">
                             <a href="#about">
-                                <span class="icon-info"></span> ${aboutLabel}
+                                <span class="icon-info"></span> ${aboutLabel}<#--关于-->
                             </a>
                         </div>
                     </li>
