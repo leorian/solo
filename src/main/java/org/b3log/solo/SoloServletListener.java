@@ -107,6 +107,7 @@ public final class SoloServletListener extends AbstractServletListener {
         B3LOG_RHYTHM_SERVE_PATH = b3log.getString("rhythm.servePath");
         B3LOG_SYMPHONY_SERVE_PATH = b3log.getString("symphony.servePath");
         FAVICON_API = b3log.getString("faviconAPI");
+        //静态作用域
     }
 
     @Override
